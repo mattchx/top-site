@@ -1,0 +1,21 @@
+---
+const { dentist } = Astro.props;
+---
+
+<div class="dentist-card">
+    <h3>{dentist.name}</h3>
+    <p>{dentist.address}</p>
+    <p>Phone: {dentist.phone}</p>
+    <p>Specialties: {dentist.specialties.join(', ')}</p>
+</div>
+
+<style>
+.dentist-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+</style>

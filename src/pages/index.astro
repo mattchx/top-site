@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import DentistCard from '../components/DentistCard.astro';
+import dentists from '../data/dentists.json';
+---
+
+<BaseLayout title="Top 10 Dentists in London, Ontario">
+    <section class="dentist-list">
+        {dentists.dentists.map(dentist => (
+            <DentistCard dentist={dentist} />
+        ))}
+    </section>
+</BaseLayout>
+
+<style>
+.dentist-list {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+</style>
