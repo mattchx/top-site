@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import DentistCard from '../../components/DentistCard.astro';
+
+export async function getStaticPaths() {
+  const { dentists } = await import('../../data/dentists.json');
+  return dentists.map(dentist => ({
+    params: { dentist: dentist.name.replace(/ /g, '-').toLowerCase() },
+    props: { dentist }
+  }));
+}
+
+const { dentist } = Astro.props;
+---
+
+<BaseLayout>
+  <div class="dentist-detail">
+    <h1>{dentist.name}</h1>
+    <div class="dentist-info">
+      <div class="specialties">
+        <h2>Specialties</h2>
+        <ul>
+          {dentist.specialties.map(specialty => (
+            <li>{specialty}</li>
+          ))}
+        </ul>
+      </div>
+      <div class="contact-info">
+        <h2>Contact Information</h2>
+        <p>{dentist.address}</p>
+        <p>{dentist.phone}</p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .dentist-detail {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .dentist-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .specialties ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .specialties li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+  }
+</style>

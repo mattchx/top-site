@@ -2,12 +2,12 @@
 const { dentist } = Astro.props;
 ---
 
-<div class="dentist-card">
+<a href={`/dentists/${dentist.name.replace(/ /g, '-').toLowerCase()}`} class="dentist-card">
     <h3>{dentist.name}</h3>
     <p>{dentist.address}</p>
     <p>Phone: {dentist.phone}</p>
     <p>Specialties: {dentist.specialties.join(', ')}</p>
-</div>
+</a>
 
 <style>
 .dentist-card {
@@ -17,5 +17,15 @@ const { dentist } = Astro.props;
     margin: 1rem 0;
     background: white;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dentist-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    cursor: pointer;
 }
 </style>
