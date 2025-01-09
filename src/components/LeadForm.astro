@@ -1,0 +1,52 @@
+---
+// No frontmatter needed
+---
+
+<script>
+const formId = 'lead-form';
+
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById(formId);
+  if (!(form instanceof HTMLFormElement)) {
+    console.error('Form element not found');
+    return;
+  }
+
+  const timestampInput = document.getElementById('timestamp');
+  if (!(timestampInput instanceof HTMLInputElement)) {
+    console.error('Timestamp input not found');
+    return;
+  }
+
+  const handleSubmit = async (event: Event) => {
+    event.preventDefault();
+    
+    timestampInput.value = new Date().toISOString();
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch('http://localhost:3001/api/leads', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        alert('Thank you! Your message has been sent.');
+        form.reset();
+      } else {
+        throw new Error('Failed to submit form');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('There was an error submitting your form. Please try again.');
+    }
+  };
+
+  form.addEventListener('submit', handleSubmit);
+});
+</script>
