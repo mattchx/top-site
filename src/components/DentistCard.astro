@@ -1,12 +1,27 @@
 ---
 const { dentist, number } = Astro.props;
+let rating;
+if (number <= 3) {
+    rating = 5;
+} else if (number <= 6) {
+    rating = 4.5;
+} else {
+    rating = 4;
+}
 ---
 
 <a href={`/dentists/${dentist.name.replace(/ /g, '-').toLowerCase()}`} class="dentist-card">
     <div class="card-number">#{number}</div>
     <h3>{dentist.name}</h3>
+    <div class="rating">
+        {Array.from({ length: 5 }).map((_, i) => (
+            <span class={`star ${i < Math.floor(rating) ? 'filled' : ''} ${i === Math.floor(rating) && rating % 1 !== 0 ? 'half' : ''}`}>
+                ★
+            </span>
+        ))}
+        <!-- <span class="rating-value">({rating.toFixed(1)})</span> -->
+    </div>
     <p>{dentist.address}</p>
-    <p>Phone: {dentist.phone}</p>
     <p>Specialties: {dentist.specialties.join(', ')}</p>
 </a>
 
@@ -50,5 +65,36 @@ const { dentist, number } = Astro.props;
     transform: scale(1.02);
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     cursor: pointer;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin: 0.5rem 0;
+}
+
+.star {
+    color: #ddd;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.star.filled {
+    color: #ffc107;
+}
+
+.star.half::before {
+    content: '★';
+    color: #ffc107;
+    position: absolute;
+    width: 50%;
+    overflow: hidden;
+}
+
+.rating-value {
+    font-size: 0.9rem;
+    color: #666;
+    margin-left: 0.5rem;
 }
 </style>
