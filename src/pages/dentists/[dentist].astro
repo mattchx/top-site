@@ -17,23 +17,39 @@ const { dentist } = Astro.props;
 <BaseLayout>
   <div class="dentist-detail">
     <a href="/" class="back-button">&larr; Back to All Dentists</a>
-    <h1>{dentist.name}</h1>
-    <div class="dentist-bio">
-      <p>
-        Dr. {dentist.name.split(" ")[0]} is a highly skilled dental professional
-        with over 15 years of experience in {dentist.specialties.join(", ")}.
-        Known for their gentle approach and attention to detail, Dr. {
-          dentist.name.split(" ")[0]
-        } is committed to providing the highest quality care to all patients.
-      </p>
+    <div class="dentist-header">
+      <div class="dentist-avatar">
+        <img
+          src="https://placehold.co/200?text=Dentist+Photo"
+          alt="Dentist Photo"
+          class="avatar-image"
+        />
+      </div>
+      <div class="dentist-title">
+        <h1>{dentist.name}</h1>
+        <h2 class="office-name">{dentist.officeName}</h2>
+      </div>
     </div>
+
     <div class="dentist-info">
       <div class="info-column">
-        <div class="dentist-image">
-          <img
-            src="https://placehold.co/400?text=Dentist+Photo"
-            alt="Dentist Photo"
-          />
+        <div class="dentist-bio">
+          <p>{dentist.bio}</p>
+        </div>
+        <div class="office-info">
+          <h2>Office Hours</h2>
+          <ul>
+            <li>Monday - Friday: 8am - 5pm</li>
+            <li>Saturday: 9am - 2pm</li>
+            <li>Sunday: Closed</li>
+          </ul>
+
+          <h2>Location</h2>
+          <p>
+            123 Main Street<br />
+            Suite 400<br />
+            San Francisco, CA 94105
+          </p>
         </div>
         <div class="specialties">
           <h2>Specialties</h2>
@@ -49,6 +65,12 @@ const { dentist } = Astro.props;
             <li>Certified in Advanced Cosmetic Dentistry</li>
             <li>Member of the American Dental Association</li>
           </ul>
+        </div>
+        <div class="dentist-office-image">
+          <img
+            src="https://placehold.co/400?text=Dentist+Office"
+            alt="Dentist Office"
+          />
         </div>
 
         <div class="testimonials">
@@ -74,22 +96,6 @@ const { dentist } = Astro.props;
         <div class="contact-form">
           <LeadForm dentist={dentist} />
         </div>
-
-        <div class="office-info">
-          <h2>Office Hours</h2>
-          <ul>
-            <li>Monday - Friday: 8am - 5pm</li>
-            <li>Saturday: 9am - 2pm</li>
-            <li>Sunday: Closed</li>
-          </ul>
-
-          <h2>Location</h2>
-          <p>
-            123 Main Street<br />
-            Suite 400<br />
-            San Francisco, CA 94105
-          </p>
-        </div>
       </div>
     </div>
   </div>
@@ -97,7 +103,7 @@ const { dentist } = Astro.props;
 
 <style>
   .dentist-detail {
-    max-width: 800px;
+    max-width: min(1000px, 90%);
     margin: 0 auto;
     padding: 2rem;
   }
@@ -196,5 +202,39 @@ const { dentist } = Astro.props;
   .dentist-detail .back-button:active {
     transform: translateY(0);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .dentist-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .dentist-avatar {
+    flex-shrink: 0;
+  }
+
+  .avatar-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #007bff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .avatar-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .dentist-title h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #0077b6;
   }
 </style>
