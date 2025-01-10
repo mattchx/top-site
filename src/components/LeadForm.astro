@@ -1,6 +1,149 @@
 ---
-// No frontmatter needed
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const { dentist } = Astro.props;
 ---
+
+<div class="lead-form-container">
+  <h2>Contact {dentist.name}</h2>
+  <form id="lead-form">
+    <div class="form-group">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required />
+      <div class="error-message" id="name-error"></div>
+    </div>
+    
+    <div class="form-group">
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" required />
+      <div class="error-message" id="email-error"></div>
+    </div>
+    
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required />
+      <div class="error-message" id="phone-error"></div>
+    </div>
+    
+    <div class="form-group">
+      <label>Preferred Contact Method</label>
+      <div class="contact-method">
+        <label>
+          <input type="radio" name="contact_method" value="email" checked /> Email
+        </label>
+        <label>
+          <input type="radio" name="contact_method" value="phone" /> Phone
+        </label>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+      <div class="error-message" id="message-error"></div>
+    </div>
+    
+    <input type="hidden" name="dentist_name" value={dentist.name} />
+    <input type="hidden" name="timestamp" id="timestamp" />
+    
+    <button type="submit" class="submit-button">
+      <span class="button-text">Send Message</span>
+      <span class="loading-spinner"></span>
+    </button>
+  </form>
+</div>
+
+<style>
+  .lead-form-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+
+  .contact-method {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .error-message {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: none;
+  }
+
+  .submit-button {
+    position: relative;
+    background: #007bff;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s;
+    width: 100%;
+  }
+
+  .submit-button:hover {
+    background: #0056b3;
+  }
+
+  .loading-spinner {
+    display: none;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid #fff;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  .submit-button.loading .button-text {
+    visibility: hidden;
+  }
+
+  .submit-button.loading .loading-spinner {
+    display: block;
+  }
+</style>
 
 <script>
 const formId = 'lead-form';

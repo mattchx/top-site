@@ -16,7 +16,11 @@ const { dentist } = Astro.props;
 
 <BaseLayout>
   <div class="dentist-detail">
+    <a href="/" class="back-button">&larr; Back to All Dentists</a>
     <h1>{dentist.name}</h1>
+    <div class="dentist-bio">
+      <p>Dr. {dentist.name.split(' ')[0]} is a highly skilled dental professional with over 15 years of experience in {dentist.specialties.join(', ')}. Known for their gentle approach and attention to detail, Dr. {dentist.name.split(' ')[0]} is committed to providing the highest quality care to all patients.</p>
+    </div>
     <div class="dentist-info">
       <div class="specialties">
         <h2>Specialties</h2>
@@ -26,41 +30,43 @@ const { dentist } = Astro.props;
           ))}
         </ul>
       </div>
+      
+      <div class="education">
+        <h2>Education & Certifications</h2>
+        <ul>
+          <li>Doctor of Dental Surgery (DDS)</li>
+          <li>Certified in Advanced Cosmetic Dentistry</li>
+          <li>Member of the American Dental Association</li>
+        </ul>
+      </div>
+      
+      <div class="testimonials">
+        <h2>What Patients Say</h2>
+        <div class="testimonial">
+          <p>"Dr. {dentist.name.split(' ')[0]} is amazing! They made me feel completely at ease during my procedure."</p>
+          <span>- Sarah T.</span>
+        </div>
+        <div class="testimonial">
+          <p>"The office is beautiful and the staff is so friendly. I highly recommend Dr. {dentist.name.split(' ')[0]}!"</p>
+          <span>- Michael R.</span>
+        </div>
+      </div>
+      
+      <div class="office-info">
+        <h2>Office Hours</h2>
+        <ul>
+          <li>Monday - Friday: 8am - 5pm</li>
+          <li>Saturday: 9am - 2pm</li>
+          <li>Sunday: Closed</li>
+        </ul>
+        
+        <h2>Location</h2>
+        <p>123 Main Street<br/>
+        Suite 400<br/>
+        San Francisco, CA 94105</p>
+      </div>
       <div class="contact-form">
-        <h2>Contact {dentist.name}</h2>
-        <form id="lead-form">
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Your Email</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" required />
-          </div>
-          <div class="form-group">
-            <label>Preferred Contact Method</label>
-            <div class="contact-method">
-              <label>
-                <input type="radio" name="contact_method" value="email" checked /> Email
-              </label>
-              <label>
-                <input type="radio" name="contact_method" value="phone" /> Phone
-              </label>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-          </div>
-          <input type="hidden" name="dentist_name" value={dentist.name} />
-          <input type="hidden" name="timestamp" id="timestamp" />
-          <button type="submit">Send Message</button>
-        </form>
-        <LeadForm />
+        <LeadForm dentist={dentist} />
       </div>
     </div>
   </div>
