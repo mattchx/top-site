@@ -5,9 +5,9 @@ const { dentist } = Astro.props;
 ---
 
 <div class="lead-form-container">
-  <h2>Contact {dentist.name}</h2>
+  <h2 class="contact-form-title">Book an Appointment with {dentist.name}</h2>
   <form id="lead-form">
-    <div class="form-group">
+    <div class="form-group w-full">
       <label for="name">Your Name</label>
       <input type="text" id="name" name="name" required />
       <div class="error-message" id="name-error"></div>
@@ -47,7 +47,7 @@ const { dentist } = Astro.props;
     <input type="hidden" name="timestamp" id="timestamp" />
     
     <button type="submit" class="submit-button">
-      <span class="button-text">Send Message</span>
+      <span class="button-text">Book Appointment</span>
       <span class="loading-spinner"></span>
     </button>
   </form>
@@ -56,9 +56,13 @@ const { dentist } = Astro.props;
 <style>
   .lead-form-container {
     background: white;
-    padding: 2rem;
+    padding: 1.5rem ;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  .contact-form-title {
+    margin-top: 0;
   }
 
   .form-group {
