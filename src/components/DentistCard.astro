@@ -12,7 +12,7 @@ if (number <= 3) {
 
 <a href={`/dentists/${dentist.name.replace(/ /g, '-').toLowerCase()}`} class="dentist-card">
     <div class="card-number">#{number}</div>
-    <h3>{dentist.name}</h3>
+    <h3 class="card-title">{dentist.name}</h3>
     <div class="rating">
         {Array.from({ length: 5 }).map((_, i) => (
             <span class={`star ${i < Math.floor(rating) ? 'filled' : ''} ${i === Math.floor(rating) && rating % 1 !== 0 ? 'half' : ''}`}>
@@ -27,16 +27,25 @@ if (number <= 3) {
 
 <style>
 .dentist-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1rem;
+    border: 1px solid rgba(209, 213, 219, 0.5);
+    border-radius: 12px;
+    padding: 1.25rem;
     margin: 1rem 0;
-    background: white;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: rgb(254, 254, 255);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     display: block;
     text-decoration: none;
     color: inherit;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    padding-top: 2rem;
+}
+
+.dentist-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    cursor: pointer;
+    background-color: #fefefe;
 }
 
 .card-number {
@@ -56,27 +65,23 @@ if (number <= 3) {
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-.dentist-card {
-    position: relative;
-    padding-top: 2rem;
-}
-
-.dentist-card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    cursor: pointer;
+.card-title {
+    margin-bottom: 0;
 }
 
 .rating {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 0.25rem;
-    margin: 0.5rem 0;
+    gap: 0.3rem;
+    margin: 0.75rem 0;
+    padding: 0.5rem;
+    background-color: rgba(0, 123, 255, 0.05);
+    border-radius: 0.5rem;
 }
 
 .star {
-    color: #ddd;
-    font-size: 1.2rem;
+    color: #ccc;
+    font-size: 1rem;
     position: relative;
 }
 
@@ -93,8 +98,7 @@ if (number <= 3) {
 }
 
 .rating-value {
-    font-size: 0.9rem;
-    color: #666;
-    margin-left: 0.5rem;
+    color: #71717a;
+    margin-left: 0.3rem;
 }
 </style>
