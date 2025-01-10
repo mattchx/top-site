@@ -6,8 +6,8 @@ import dentists from '../data/dentists.json';
 
 <BaseLayout title="Top 10 Dentists in London, Ontario">
     <section class="dentist-list">
-        {dentists.dentists.map(dentist => (
-            <DentistCard dentist={dentist} />
+        {dentists.dentists.map((dentist, index) => (
+            <DentistCard dentist={dentist} number={index + 1} />
         ))}
     </section>
 </BaseLayout>
@@ -17,5 +17,8 @@ import dentists from '../data/dentists.json';
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 </style>

@@ -1,8 +1,9 @@
 ---
-const { dentist } = Astro.props;
+const { dentist, number } = Astro.props;
 ---
 
 <a href={`/dentists/${dentist.name.replace(/ /g, '-').toLowerCase()}`} class="dentist-card">
+    <div class="card-number">#{number}</div>
     <h3>{dentist.name}</h3>
     <p>{dentist.address}</p>
     <p>Phone: {dentist.phone}</p>
@@ -21,6 +22,28 @@ const { dentist } = Astro.props;
     text-decoration: none;
     color: inherit;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-number {
+    position: absolute;
+    top: -0.75rem;
+    left: 1rem;
+    background: #007bff;
+    color: white;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.dentist-card {
+    position: relative;
+    padding-top: 2rem;
 }
 
 .dentist-card:hover {
