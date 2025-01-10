@@ -22,10 +22,14 @@ if (number <= 3) {
             ))}
             <!-- <span class="rating-value">({rating.toFixed(1)})</span> -->
         </div>
-        <p>{dentist.address}</p>
-        <p><span class="bold">Specialties:</span> {dentist.specialties.join(', ')}</p>
+        <p class="italics"><span class="bold">Specialties:</span> {dentist.specialties.join(', ')}</p>
+        <p><span class="bold">{dentist.office}</span> {dentist.address}</p>
+        
     </div>
-    <div class="right-side-container">
+    <div class="right-container">
+        <div class="dentist-avatar">
+            <img src="https://placehold.co/100?text=Dentist" alt="Dentist Avatar" />
+        </div>
         <button class="learn-more-btn">
             Learn More →
         </button>
@@ -61,8 +65,9 @@ if (number <= 3) {
     margin-right: 1rem;
 }
 
-.right-side-container {
+.right-container {
     display: flex;
+    flex-direction: column;
     align-items: end;
     padding-left: 1rem;
     /* border-left: 1px solid rgba(209, 213, 219, 0.3); */
@@ -106,6 +111,10 @@ if (number <= 3) {
     margin-bottom: 0;
 }
 
+.card-title:hover {
+    text-decoration: underline;
+}
+
 .rating {
     display: inline-flex;
     align-items: center;
@@ -139,7 +148,26 @@ if (number <= 3) {
     margin-left: 0.3rem;
 }
 
+.dentist-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    border: 3px solid #007bff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dentist-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .bold {
     font-weight: 600;
+}
+.italics {
+    font-style: italic;
 }
 </style>

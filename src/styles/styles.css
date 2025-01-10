@@ -43,18 +43,30 @@ header {
 }
 
 /* Back button style on dentist detail page */
-.dentist-detail a {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #f0f0f0;
-    color: #333;
+.dentist-detail .back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
     text-decoration: none;
-    border-radius: 5px;
-    margin-bottom: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.dentist-detail a:hover {
-    background-color: #e0e0e0;
+.dentist-detail .back-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dentist-detail .back-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive Design */
