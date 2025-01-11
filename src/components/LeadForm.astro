@@ -5,7 +5,8 @@ const { dentist } = Astro.props;
 ---
 
 <div class="lead-form-container">
-  <h2 class="contact-form-title">Book an Appointment with {dentist.name}</h2>
+  <h2 class="contact-form-title">Book an Appointment</h2>
+    <p class="contact-form-subtitle">with <span class="bold">{dentist.name}</span></p>
   <form id="lead-form">
     <div class="form-group">
       <input 
@@ -74,12 +75,18 @@ const { dentist } = Astro.props;
     margin-top: 0;
   }
 
-  .form-row {
+  .contact-form-subtitle {
+    font-size: large;
+    margin-bottom: 1rem;
+
+  }
+
+  /* .form-row {
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     margin-bottom: 1.5rem;
-  }
+  } */
 
   .form-group {
     margin-bottom: 1rem;

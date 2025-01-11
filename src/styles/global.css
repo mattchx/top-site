@@ -9,3 +9,10 @@ header {
     padding: 20px;
     text-align: center;
 }
+
+.bold {
+    font-weight: 600;
+}
+.italics {
+    font-style: italic;
+}
