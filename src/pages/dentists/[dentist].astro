@@ -34,22 +34,8 @@ const { dentist } = Astro.props;
     <div class="dentist-info">
       <div class="info-column">
         <div class="dentist-bio">
+          <h2>About</h2>
           <p>{dentist.bio}</p>
-        </div>
-        <div class="office-info">
-          <h2>Office Hours</h2>
-          <ul>
-            <li>Monday - Friday: 8am - 5pm</li>
-            <li>Saturday: 9am - 2pm</li>
-            <li>Sunday: Closed</li>
-          </ul>
-
-          <h2>Location</h2>
-          <p>
-            123 Main Street<br />
-            Suite 400<br />
-            San Francisco, CA 94105
-          </p>
         </div>
         <div class="specialties">
           <h2>Specialties</h2>
@@ -57,14 +43,21 @@ const { dentist } = Astro.props;
             {dentist.specialties.map((specialty) => <li>{specialty}</li>)}
           </ul>
         </div>
-
-        <div class="education">
-          <h2>Education & Certifications</h2>
+        <div class="office-hours">
+          <h2>Office Hours</h2>
           <ul>
-            <li>Doctor of Dental Surgery (DDS)</li>
-            <li>Certified in Advanced Cosmetic Dentistry</li>
-            <li>Member of the American Dental Association</li>
+            <li>Monday - Friday: 8am - 5pm</li>
+            <li>Saturday: 9am - 2pm</li>
+            <li>Sunday: Closed</li>
           </ul>
+        </div>
+        <div class="office-location">
+          <h2>Location</h2>
+          <p>
+            123 Main Street<br />
+            Suite 400<br />
+            San Francisco, CA 94105
+          </p>
         </div>
         <div class="dentist-office-image">
           <img
@@ -72,29 +65,36 @@ const { dentist } = Astro.props;
             alt="Dentist Office"
           />
         </div>
-
-        <div class="testimonials">
-          <h2>What Patients Say</h2>
-          <div class="testimonial">
-            <p>
-              "Dr. {dentist.name.split(" ")[0]} is amazing! They made me feel completely
-              at ease during my procedure."
-            </p>
-            <span>- Sarah T.</span>
-          </div>
-          <div class="testimonial">
-            <p>
-              "The office is beautiful and the staff is so friendly. I highly
-              recommend Dr. {dentist.name.split(" ")[0]}!"
-            </p>
-            <span>- Michael R.</span>
-          </div>
-        </div>
       </div>
 
       <div class="form-column">
+        <div class="testimonials">
+          <h2>What Patients Say</h2>
+          <div class="testimonial">
+            <p class="italic">
+              "Dr. {dentist.name.split(" ")[0]} is amazing! They made me feel completely
+              at ease during my procedure."
+            </p>
+            <span class="bold">- Sarah T.</span>
+          </div>
+          <div class="testimonial">
+            <p class="italic">
+              "The office is beautiful and the staff is so friendly. I highly
+              recommend Dr. {dentist.name.split(" ")[0]}!"
+            </p>
+            <span class="bold">- Michael R.</span>
+          </div>
+        </div>
         <div class="contact-form">
           <LeadForm dentist={dentist} />
+        </div>
+        <div class="education">
+          <h2>Education & Certifications</h2>
+          <ul>
+            <li>Doctor of Dental Surgery (DDS)</li>
+            <li>Certified in Advanced Cosmetic Dentistry</li>
+            <li>Member of the American Dental Association</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -118,14 +118,14 @@ const { dentist } = Astro.props;
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
   }
 
   .form-column {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
   }
 
   .specialties ul {
