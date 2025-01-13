@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import DentistCard from "../../components/DentistCard.astro";
 import LeadForm from "../../components/LeadForm.astro";
 
 export async function getStaticPaths() {
@@ -128,14 +127,52 @@ const { dentist } = Astro.props;
     gap: 1rem;
   }
 
+  .dentist-bio p {
+    padding-left: 0.5rem;
+  }
+
   .specialties ul {
     list-style: none;
-    padding: 0;
+    padding-left: 0.5rem;
   }
 
   .specialties li {
-    padding: 0.5rem 0;
+    padding: 0.4rem 0;
     border-bottom: 1px solid #eee;
+  }
+
+  .office-hours ul {
+    margin-top: 0.2rem;
+    padding-left: 0.5rem;
+    line-height: 1.2rem;
+    list-style: none;
+  }
+
+  .office-hours li {
+    margin-bottom: 0.5rem;
+  }
+
+  .education ul {
+    margin-top: 0.2rem;
+    padding-left: 1.4rem;
+    line-height: 1.2rem;
+  }
+
+  .education li {
+    margin-bottom: 0.5rem;
+  }
+
+  .office-location p {
+    padding-left: 0.5rem;
+    line-height: 1.7rem;
+  }
+
+  .testimonials .testimonial {
+    padding-left: 0.5rem;
+  }
+
+  .testimonials .testimonial:first-of-type {
+    margin-bottom: 1rem;
   }
 
   .form-group {
