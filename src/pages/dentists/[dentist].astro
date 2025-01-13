@@ -15,7 +15,9 @@ const { dentist } = Astro.props;
 
 <BaseLayout>
   <div class="dentist-detail">
-    <a href="/" class="back-button">&larr; Back to All Dentists</a>
+    <div class="button-container">
+      <a href="/" class="back-button">&larr; Back to All Dentists</a>
+    </div>
     <div class="dentist-header">
       <div class="dentist-avatar">
         <img
@@ -273,5 +275,41 @@ const { dentist } = Astro.props;
     margin: 0;
     font-size: 2.5rem;
     color: #0077b6;
+  }
+
+  /* Mobile styles */
+  @media (max-width: 500px) {
+    .dentist-detail {
+      padding: 16px;
+    }
+
+    .button-container {
+      text-align: center;
+    }
+
+    .dentist-header {
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 0;
+    }
+
+    .avatar-image {
+      height: 150px;
+      width: 150px;
+    }
+
+    .dentist-title h1 {
+      font-size: 2rem;
+      margin-bottom: 0;
+    }
+
+    .dentist-title h2 {
+      font-size: large;
+    }
+
+    .dentist-info {
+      flex-direction: column;
+      margin-top: 16px;
+    }
   }
 </style>
