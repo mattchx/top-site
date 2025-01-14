@@ -7,7 +7,7 @@ import dentists from '../data/dentists.json';
 <BaseLayout title="Top Dentists in London, Ontario">
     <section class="dentist-list">
         {dentists.dentists.map((dentist, index) => (
-            <DentistCard dentist={dentist} number={index + 1} />
+            index < 5 && <DentistCard dentist={dentist} number={index + 1} />
         ))}
     </section>
 </BaseLayout>
