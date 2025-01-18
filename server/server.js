@@ -8,7 +8,11 @@ const port = 3001;
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 const leadsFilePath = path.join(__dirname, '../data', 'leads.json');
 
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:4321',
+  methods: ['POST'],
+  allowedHeaders: ['Content-Type']
+}));
 app.use(express.json());
 
 app.post('/api/leads', (req, res) => {
@@ -26,8 +30,18 @@ app.post('/api/leads', (req, res) => {
     // Add new lead
     leadsData.push(newLead);
     
+    // Ensure directory exists
+    if (!fs.existsSync(path.dirname(leadsFilePath))) {
+      fs.mkdirSync(path.dirname(leadsFilePath), { recursive: true });
+    }
+
     // Save updated leads
     fs.writeFileSync(leadsFilePath, JSON.stringify(leadsData, null, 2));
+    
+    // Verify file was written
+    if (!fs.existsSync(leadsFilePath)) {
+      throw new Error('Failed to write leads file');
+    }
     
     res.status(200).json({ success: true });
   } catch (error) {
