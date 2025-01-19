@@ -1,7 +1,4 @@
-import fs from 'fs';
-import path from 'path';
-
-const leadsFilePath = path.join(process.cwd(), 'data', 'leads.json');
+import db from '../db.js';
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
@@ -11,21 +8,34 @@ export default async function handler(req, res) {
         receivedAt: new Date().toISOString()
       };
 
-      // Read existing leads
-      const leadsData = fs.existsSync(leadsFilePath)
-        ? JSON.parse(fs.readFileSync(leadsFilePath))
-        : [];
+      // Insert new lead using parameterized query
+      const stmt = db.prepare(`
+        INSERT INTO leads (name, email, phone, message, receivedAt)
+        VALUES (@name, @email, @phone, @message, @receivedAt)
+      `);
       
-      // Add new lead
-      leadsData.push(newLead);
+      const result = stmt.run(newLead);
       
-      // Save updated leads
-      fs.writeFileSync(leadsFilePath, JSON.stringify(leadsData, null, 2));
-      
-      res.status(200).json({ success: true });
+      if (result.changes > 0) {
+        res.status(200).json({ success: true });
+      } else {
+        throw new Error('Failed to insert lead');
+      }
     } catch (error) {
       console.error('Error saving lead:', error);
-      res.status(500).json({ success: false, error: 'Failed to save lead' });
+      
+      // Handle unique constraint violation
+      if (error.message.includes('UNIQUE constraint failed')) {
+        res.status(409).json({
+          success: false,
+          error: 'Lead with this email already exists'
+        });
+      } else {
+        res.status(500).json({
+          success: false,
+          error: 'Failed to save lead'
+        });
+      }
     }
   } else {
     res.setHeader('Allow', ['POST']);

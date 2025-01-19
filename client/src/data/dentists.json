@@ -1,0 +1,94 @@
+{
+  "dentists": [
+    {
+      "name": "Dr. John Smith",
+      "address": "123 Main St, London, ON",
+      "phone": "(519) 555-1234",
+      "specialties": ["General Dentistry", "Orthodontics"],
+      "office": "General Dentistry Clinic",
+      "officeName": "Main Street Dental",
+      "bio": "With over 15 years of experience, Dr. John Smith provides comprehensive dental care with a focus on preventive dentistry and orthodontic treatments. He is dedicated to helping patients achieve healthy, beautiful smiles."
+    },
+    {
+      "name": "Dr. Sarah Johnson",
+      "address": "456 Elm St, London, ON",
+      "phone": "(519) 555-5678",
+      "specialties": ["Pediatric Dentistry"],
+      "office": "Pediatric Dentistry Clinic",
+      "officeName": "Elm Street Pediatric Dentistry",
+      "bio": "Dr. Sarah Johnson specializes in pediatric dentistry, creating a fun and welcoming environment for children. With 10 years of experience, she focuses on early dental care and preventive treatments to establish lifelong healthy habits."
+    },
+    {
+      "name": "Dr. Michael Brown",
+      "address": "789 Oak St, London, ON",
+      "phone": "(519) 555-9876",
+      "specialties": ["Cosmetic Dentistry"],
+      "office": "Cosmetic Dentistry Clinic",
+      "officeName": "Oak Street Smile Studio",
+      "bio": "Dr. Michael Brown is a renowned cosmetic dentist with expertise in smile makeovers, veneers, and teeth whitening. His artistic approach combined with advanced dental technology helps patients achieve their dream smiles."
+    },
+    {
+      "name": "Dr. Emily Davis",
+      "address": "321 Pine St, London, ON",
+      "phone": "(519) 555-4321",
+      "specialties": ["Periodontics"],
+      "office": "Periodontics Clinic",
+      "officeName": "Pine Street Periodontal Center",
+      "bio": "Dr. Emily Davis is a board-certified periodontist specializing in gum health, dental implants, and periodontal surgery. With 12 years of experience, she provides advanced treatments for gum disease and helps restore patients' oral health."
+    },
+    {
+      "name": "Dr. David Wilson",
+      "address": "654 Maple St, London, ON",
+      "phone": "(519) 555-8765",
+      "specialties": ["Endodontics"],
+      "office": "Endodontics Clinic",
+      "officeName": "Maple Street Endodontics",
+      "bio": "Dr. David Wilson is an experienced endodontist specializing in root canal therapy and saving damaged teeth. Using state-of-the-art technology, he provides comfortable and effective treatments to preserve patients' natural teeth."
+    },
+    {
+      "name": "Dr. Jessica Miller",
+      "address": "987 Cedar St, London, ON",
+      "phone": "(519) 555-3456",
+      "specialties": ["Oral Surgery"],
+      "office": "Oral Surgery Clinic",
+      "officeName": "Cedar Street Oral Surgery Center",
+      "bio": "Dr. Jessica Miller is a skilled oral and maxillofacial surgeon with expertise in wisdom teeth removal, dental implants, and corrective jaw surgery. She provides compassionate care using the latest surgical techniques."
+    },
+    {
+      "name": "Dr. Christopher Moore",
+      "address": "234 Birch St, London, ON",
+      "phone": "(519) 555-6543",
+      "specialties": ["Prosthodontics"],
+      "office": "Prosthodontics Clinic",
+      "officeName": "Birch Street Prosthodontics",
+      "bio": "Dr. Christopher Moore is a prosthodontist specializing in dental prosthetics, including crowns, bridges, and dentures. With a focus on both function and aesthetics, he helps patients restore their smiles and chewing ability."
+    },
+    {
+      "name": "Dr. Amanda Taylor",
+      "address": "567 Walnut St, London, ON",
+      "phone": "(519) 555-7890",
+      "specialties": ["General Dentistry"],
+      "office": "General Dentistry Clinic",
+      "officeName": "Walnut Street Dental Care",
+      "bio": "Dr. Amanda Taylor provides comprehensive general dentistry services, including cleanings, fillings, and oral health exams. With a gentle approach and 8 years of experience, she helps patients maintain optimal dental health."
+    },
+    {
+      "name": "Dr. Matthew Anderson",
+      "address": "890 Cherry St, London, ON",
+      "phone": "(519) 555-2109",
+      "specialties": ["Orthodontics"],
+      "office": "Orthodontics Clinic",
+      "officeName": "Cherry Street Orthodontics",
+      "bio": "Dr. Matthew Anderson is an orthodontist specializing in braces, Invisalign, and other teeth-straightening treatments. With 9 years of experience, he helps patients of all ages achieve properly aligned smiles."
+    },
+    {
+      "name": "Dr. Olivia Thomas",
+      "address": "123 Spruce St, London, ON",
+      "phone": "(519) 555-1098",
+      "specialties": ["Pediatric Dentistry"],
+      "office": "Pediatric Dentistry Clinic",
+      "officeName": "Spruce Street Kids Dental",
+      "bio": "Dr. Olivia Thomas is a pediatric dentist with a special focus on early childhood dental care. Using child-friendly techniques and a warm approach, she helps young patients develop positive dental experiences and healthy habits."
+    }
+  ]
+}
