@@ -198,29 +198,45 @@ document.addEventListener('DOMContentLoaded', () => {
   const handleSubmit = async (event: Event) => {
     event.preventDefault();
     
+    // Add loading state
+    const submitButton = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+    if (submitButton) {
+      submitButton.classList.add('loading');
+      submitButton.disabled = true;
+    }
+
     timestampInput.value = new Date().toISOString();
 
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
 
     try {
-      const response = await fetch('http://localhost:3001/api/leads', {
+      const response = await fetch('http://localhost:3002/api/leads/external', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
         body: JSON.stringify(data)
       });
 
-      if (response.ok) {
-        alert('Thank you! Your message has been sent.');
-        form.reset();
-      } else {
-        throw new Error('Failed to submit form');
+      const responseData = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(responseData.message || 'Failed to submit form');
       }
+
+      alert('Thank you! Your message has been sent.');
+      form.reset();
     } catch (error) {
       console.error('Error:', error);
-      alert('There was an error submitting your form. Please try again.');
+      alert(`Error: ${error.message || 'There was an error submitting your form. Please try again.'}`);
+    } finally {
+      // Remove loading state
+      if (submitButton) {
+        submitButton.classList.remove('loading');
+        submitButton.disabled = false;
+      }
     }
   };
 
