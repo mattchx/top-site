@@ -7,7 +7,7 @@ const { dentist } = Astro.props;
 <div class="lead-form-container">
   <h2 class="contact-form-title">Book an Appointment</h2>
     <p class="contact-form-subtitle">with <span class="bold">{dentist.name}</span></p>
-  <form id="lead-form">
+  <form id="lead-form" data-dentist={JSON.stringify(dentist)}>
     <div class="form-group">
       <input 
         type="text" 
@@ -53,7 +53,6 @@ const { dentist } = Astro.props;
       <div class="error-message" id="message-error"></div>
     </div>
     
-    <input type="hidden" name="dentist_name" value={dentist.name} />
     <input type="hidden" name="timestamp" id="timestamp" />
     
     <button type="submit" class="submit-button">
@@ -180,10 +179,33 @@ const { dentist } = Astro.props;
 </style>
 
 <script>
+interface Dentist {
+  name: string;
+  email: string;
+}
+
 const formId = 'lead-form';
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById(formId);
+  if (!form) {
+    console.error('Form element not found');
+    return;
+  }
+  
+  let dentist: Dentist = { name: '', email: '' };
+  try {
+    if (form.dataset.dentist) {
+      const parsedDentist = JSON.parse(form.dataset.dentist);
+      if (typeof parsedDentist === 'object' &&
+          typeof parsedDentist.name === 'string' &&
+          typeof parsedDentist.email === 'string') {
+        dentist = parsedDentist;
+      }
+    }
+  } catch (error) {
+    console.error('Error parsing dentist data:', error);
+  }
   if (!(form instanceof HTMLFormElement)) {
     console.error('Form element not found');
     return;
@@ -210,6 +232,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
 
+    // Transform data to match API format
+    const transformedData = {
+      name: data.name, // form submitter's name
+      email: data.email, // form submitter's email
+      phone: data.phone,
+      status: 'new', // default status
+      notes: data.message || '', // map message to notes
+      type_id: 1, // fixed value for dentist leads
+      message: data.message || '',
+      contact_name: dentist.name, // use dentist's name from props
+      contact_email: dentist.email // use dentist's email from props
+    };
+
+    console.log("data: ", transformedData)
+
     try {
       const response = await fetch('http://localhost:3002/api/leads/external', {
         method: 'POST',
@@ -217,7 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(transformedData)
       });
 
       const responseData = await response.json();
