@@ -11,7 +11,10 @@ if (number <= 3) {
 ---
 
 <a href={`/dentists/${dentist.name.replace(/ /g, '-').toLowerCase()}`} class="dentist-card">
-    <div class="card-number">#{number}</div>
+    
+    <!-- <div class="card-number">#{number}</div> -->
+    <div class="card-number"><div class="gold-star">★</div></div>
+
     <div class="card-content">
         <h3 class="card-title">{dentist.name}</h3>
         <div class="rating">
@@ -20,7 +23,6 @@ if (number <= 3) {
                     ★
                 </span>
             ))}
-            <!-- <span class="rating-value">({rating.toFixed(1)})</span> -->
         </div>
         <p class="italic"><span class="bold">Specialties:</span> {dentist.specialties.join(', ')}</p>
         <p><span class="bold">{dentist.office}</span> {dentist.address}</p>
@@ -108,6 +110,26 @@ if (number <= 3) {
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
+.gold-star {
+    position: absolute;
+    top: -0.1rem;
+    left: 0.45rem;
+    color: #ffc107;
+    font-size: 1.7rem;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.3);
+    transform: rotate(-15deg);
+    /* animation: float 3s ease-in-out infinite; */
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: rotate(-15deg) translateY(0);
+    }
+    50% {
+        transform: rotate(-15deg) translateY(-5px);
+    }
+}
+
 .dentist-card p {
     margin: 5px 0;
 }
@@ -123,13 +145,14 @@ if (number <= 3) {
 
 .rating {
     display: inline-flex;
-    width: 105px;
     align-items: center;
-    gap: 0.3rem;
+    gap: 0.2rem;
     margin: 0.75rem 0;
-    padding: 0.5rem;
+    padding: 0.15rem 0.4rem;
     background-color: rgba(0, 123, 255, 0.05);
     border-radius: 0.5rem;
+    width: max-content;
+    max-width: 100%;
 }
 
 .star {
