@@ -245,10 +245,11 @@ document.addEventListener('DOMContentLoaded', () => {
       contact_email: dentist.email // use dentist's email from props
     };
 
-    console.log("data: ", transformedData)
-
+     
+    const apiUrl = import.meta.env.PUBLIC_API_URL || 'http://localhost:3002';
+    console.log(apiUrl)
     try {
-      const response = await fetch('http://localhost:3002/api/leads/external', {
+      const response = await fetch(apiUrl + '/api/leads/external', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
