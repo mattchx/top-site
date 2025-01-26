@@ -6,9 +6,14 @@ import dentists from '../data/dentists.json';
 
 <BaseLayout title="Top Dentists in London, Ontario">
     <section class="dentist-list">
-        {dentists.dentists.map((dentist, index) => (
+        <div class="coming-soon">
+            <h2>Coming Soon</h2>
+            <p>Our list of top dentists will be available shortly. <br>
+            Please check back soon!</p>
+        </div>
+        <!-- {dentists.dentists.map((dentist, index) => (
             index < 5 && <DentistCard dentist={dentist} number={index + 1} />
-        ))}
+        ))} -->
     </section>
 </BaseLayout>
 
@@ -20,5 +25,24 @@ import dentists from '../data/dentists.json';
     display: flex;
     flex-direction: column;
     gap: 1rem;
+}
+
+.coming-soon {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.coming-soon h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+}
+
+.coming-soon p {
+    font-size: 1.2rem;
+    color: var(--color-text);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
 }
 </style>
