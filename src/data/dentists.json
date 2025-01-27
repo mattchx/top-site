@@ -9,92 +9,100 @@
       "office": "West Five Family Dental",
       "officeName": "West Five Family Dental",
       "bio": "Dr. Hesham Sherghin received his Doctor of Dental Surgery from the University of Detroit Mercy and completed his Advanced Education in General Dentistry (AEGD) program. He is an active member of several study clubs and provides a comfortable, family-friendly environment for patients of all ages. The clinic focuses on advanced dentistry with a personal touch, ensuring optimal oral health and beautiful smiles.",
-      "profileImage": "https://westfivedental.ca/wp-content/uploads/2024/12/H-Sherghin-SQ.png",   
-      "officeImage": "https://example.com/stoneycreek-office.jpg"   
+      "profileImage": "https://westfivedental.ca/wp-content/uploads/2024/12/H-Sherghin-SQ.png",
+      "officeImage": "https://example.com/stoneycreek-office.jpg",
+      "website": "https://westfivedental.ca"
     },
     {
       "name": "Dr. Aura Hidalgo",
-      "email": "info@smilesonsouthdale.com",   
+      "email": "info@smilesonsouthdale.com",
       "address": "639 Southdale Road East, London, ON N6E 3M2",
-      "phone": "(519) 555-9876",   
+      "phone": "(519) 555-9876",
       "specialties": ["General Dentistry", "Cosmetic Dentistry"],
       "office": "Smiles on Southdale",
       "officeName": "Smiles on Southdale Dental Clinic",
       "bio": "Dr. Aura Hidalgo and her team at Smiles on Southdale provide a friendly environment for patients of all ages. They offer a wide range of services, including digital radiography, cleanings, aligners, and emergency appointments. The clinic is known for its convenient hours and welcoming atmosphere.",
-      "profileImage": "https://example.com/dr-hidalgo.jpg",   
-      "officeImage": "https://example.com/smilesonsouthdale-office.jpg"   
+      "profileImage": "https://example.com/dr-hidalgo.jpg",
+      "officeImage": "https://example.com/smilesonsouthdale-office.jpg",
+      "website": "https://www.smilesonsouthdale.com"
     },
     {
       "name": "Dr. Jeff Edwards",
-      "email": "info@byronwooddental.com",   
+      "email": "info@byronwooddental.com",
       "address": "431 Boler Road, Unit 8, London, ON N6K 2K8",
       "phone": "(519) 471-5110",
       "specialties": ["General Dentistry", "Cosmetic Dentistry", "Sedation Dentistry"],
       "office": "Byronwood Dental",
       "officeName": "Byronwood Dental Office",
       "bio": "Dr. Jeff Edwards and his team at Byronwood Dental have been serving the London community since the 1950s. They offer a wide range of services, including root canal therapy, dental implants, and teeth whitening. The clinic is known for its patient-centered approach and commitment to providing the highest standard of care.",
-      "profileImage": "https://example.com/dr-edwards.jpg",   
-      "officeImage": "https://example.com/byronwood-office.jpg"   
+      "profileImage": "https://example.com/dr-edwards.jpg",
+      "officeImage": "https://example.com/byronwood-office.jpg",
+      "website": "https://byronwooddental.com"
     },
     {
       "name": "Dr. Lucy",
-      "email": "info@northview-dental.com",   
-      "address": "Adelaide Street, London, ON",   
-      "phone": "(519) 555-4321",   
+      "email": "info@northview-dental.com",
+      "address": "Adelaide Street, London, ON",
+      "phone": "(519) 555-4321",
       "specialties": ["General Dentistry", "Cosmetic Dentistry", "Dental Implants"],
       "office": "NorthView Dental",
       "officeName": "NorthView Dental Clinic",
       "bio": "Dr. Lucy and her team at NorthView Dental are committed to providing personalized, gentle, and first-class dental care. They utilize the latest technologies to ensure patients achieve and maintain optimal oral health. The clinic is known for its relaxing environment and multilingual staff.",
-      "profileImage": "https://example.com/dr-lucy.jpg",   
-      "officeImage": "https://example.com/northview-office.jpg"   
+      "profileImage": "https://example.com/dr-lucy.jpg",
+      "officeImage": "https://example.com/northview-office.jpg",
+      "website": "https://northview-dental.com"
     },
     {
       "name": "Dr. Reavell",
-      "email": "info@queensfamilydentistry.ca",   
-      "address": "Downtown London, ON",   
-      "phone": "(519) 555-1111",   
+      "email": "info@queensfamilydentistry.ca",
+      "address": "Downtown London, ON",
+      "phone": "(519) 555-1111",
       "specialties": ["General Dentistry", "Pediatric Dentistry", "Cosmetic Dentistry"],
       "office": "Queens Family Dentistry",
       "officeName": "Queens Family Dental Clinic",
       "bio": "Dr. Reavell and his team at Queens Family Dentistry have been serving the London community for over 35 years. They offer high-quality care using the latest dental technologies. The clinic is known for its efficient team and commitment to patient satisfaction.",
-      "profileImage": "https://example.com/dr-reavell.jpg",   
-      "officeImage": "https://example.com/queensfamily-office.jpg"   
+      "profileImage": "https://example.com/dr-reavell.jpg",
+      "officeImage": "https://example.com/queensfamily-office.jpg",
+      "website": "https://queensfamilydentistry.ca"
     },
     {
       "name": "Dr. Ken Wright",
-      "email": "info@wrightclinic.ca",   
-      "address": "The Wright Clinic, London, ON",   
-      "phone": "(519) 555-2222",   
+      "email": "info@wrightclinic.ca",
+      "address": "The Wright Clinic, London, ON",
+      "phone": "(519) 555-2222",
       "specialties": ["Community Dentistry", "General Dentistry"],
       "office": "The Wright Clinic",
       "officeName": "The Wright Community Dental Clinic",
       "bio": "Dr. Ken Wright is the founder of The Wright Clinic, a not-for-profit dental clinic providing accessible and affordable dental care to Londoners facing barriers due to income or housing insecurity. The clinic offers routine dental services, including cleanings, fillings, and extractions.",
-      "profileImage": "https://example.com/dr-wright.jpg",   
-      "officeImage": "https://example.com/wrightclinic-office.jpg"   
+      "profileImage": "https://example.com/dr-wright.jpg",
+      "officeImage": "https://example.com/wrightclinic-office.jpg",
+      "website": "https://wrightclinic.ca"
     },
     {
       "name": "Dr. Sbenati",
-      "email": "info@sbenatidentistry.com",   
-      "address": "Sbenati Dentistry, London, ON",   
-      "phone": "(519) 555-3333",   
+      "email": "info@sbenatidentistry.com",
+      "address": "Sbenati Dentistry, London, ON",
+      "phone": "(519) 555-3333",
       "specialties": ["Cosmetic Dentistry", "General Dentistry", "Pediatric Dentistry"],
       "office": "Sbenati Dentistry",
       "officeName": "Sbenati Dental Clinic",
       "bio": "Dr. Sbenati and his team offer a wide range of dental services, including cavity treatment, teeth cleaning, and dental exams. The clinic is known for its modern amenities, including free Wi-Fi and insurance acceptance.",
-      "profileImage": "https://example.com/dr-sbenati.jpg",   
-      "officeImage": "https://example.com/sbenati-office.jpg"   
+      "profileImage": "https://example.com/dr-sbenati.jpg",
+      "officeImage": "https://example.com/sbenati-office.jpg",
+      "website": "https://sbenatidentistry.com"
     },
     {
       "name": "Dr. Meagan",
-      "email": "info@renaissancedentalcentre.com",   
-      "address": "Renaissance Dental Centre, London, ON",   
-      "phone": "(519) 555-4444",   
+      "email": "info@renaissancedentalcentre.com",
+      "address": "Renaissance Dental Centre, London, ON",
+      "phone": "(519) 555-4444",
       "specialties": ["Implant Dentistry", "Cosmetic Dentistry", "Sedation Dentistry"],
       "office": "Renaissance Dental Centre",
       "officeName": "Renaissance Dental Clinic",
       "bio": "Dr. Meagan and her team at Renaissance Dental Centre offer a comprehensive range of dental services, including dental implants, Invisalign, and teeth whitening. The clinic is known for its state-of-the-art technology and patient-centered care.",
-      "profileImage": "https://example.com/dr-meagan.jpg",   
-      "officeImage": "https://example.com/renaissance-office.jpg"   
+      "profileImage": "https://example.com/dr-meagan.jpg",
+      "officeImage": "https://example.com/renaissance-office.jpg",
+      "website": "https://renaissancedentalcentre.com"
     }
   ]
 }
