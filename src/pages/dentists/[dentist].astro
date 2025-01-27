@@ -11,6 +11,12 @@ export async function getStaticPaths() {
 }
 
 const { dentist } = Astro.props;
+
+// Helper function to validate image URL
+const isValidImageUrl = (url: string) => {
+    if (!url) return false;
+    return !url.includes('example.com');
+}
 ---
 
 <BaseLayout>
@@ -19,13 +25,15 @@ const { dentist } = Astro.props;
       <a href="/" class="back-button">&larr; Back to All Dentists</a>
     </div>
     <div class="dentist-header">
-      <div class="dentist-avatar">
-        <img
-          src={dentist.profileImage}
-          alt={`${dentist.name} Photo`}
-          class="avatar-image"
-        />
-      </div>
+      {isValidImageUrl(dentist.profileImage) && (
+        <div class="dentist-avatar">
+          <img
+            src={dentist.profileImage}
+            alt={`${dentist.name} Photo`}
+            class="avatar-image"
+          />
+        </div>
+      )}
       <div class="dentist-title">
         <h1>{dentist.name}</h1>
         <h2 class="office-name">{dentist.officeName}</h2>
@@ -60,12 +68,14 @@ const { dentist } = Astro.props;
             San Francisco, CA 94105
           </p>
         </div>
-        <div class="dentist-office-image">
-          <img
-            src="https://placehold.co/400?text=Dentist+Office"
-            alt="Dentist Office"
-          />
-        </div>
+        {isValidImageUrl(dentist.officeImage) && (
+          <div class="dentist-office-image">
+            <img
+              src={dentist.officeImage}
+              alt={`${dentist.officeName} Office`}
+            />
+          </div>
+        )}
       </div>
 
       <div class="form-column">
@@ -275,6 +285,13 @@ const { dentist } = Astro.props;
     margin: 0;
     font-size: 2.5rem;
     color: #0077b6;
+  }
+
+  .dentist-office-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
   /* Mobile styles */
