@@ -55,18 +55,14 @@ const isValidImageUrl = (url: string) => {
         <div class="office-hours">
           <h2>Office Hours</h2>
           <ul>
-            <li>Monday - Friday: 8am - 5pm</li>
-            <li>Saturday: 9am - 2pm</li>
-            <li>Sunday: Closed</li>
+            {dentist.officeHours.map((schedule) => (
+              <li>{schedule.day}: {schedule.hours}</li>
+            ))}
           </ul>
         </div>
         <div class="office-location">
           <h2>Location</h2>
-          <p>
-            123 Main Street<br />
-            Suite 400<br />
-            San Francisco, CA 94105
-          </p>
+          <p>{dentist.address}</p>
         </div>
         {isValidImageUrl(dentist.officeImage) && (
           <div class="dentist-office-image">
@@ -102,9 +98,9 @@ const isValidImageUrl = (url: string) => {
         <div class="education">
           <h2>Education & Certifications</h2>
           <ul>
-            <li>Doctor of Dental Surgery (DDS)</li>
-            <li>Certified in Advanced Cosmetic Dentistry</li>
-            <li>Member of the American Dental Association</li>
+            {dentist.education.map((item) => (
+              <li>{item}</li>
+            ))}
           </ul>
         </div>
       </div>
