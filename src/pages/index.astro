@@ -8,12 +8,12 @@ import dentists from '../data/dentists.json';
     <section class="dentist-list">
         <div class="coming-soon">
             <h2>Coming Soon</h2>
-            <p>Our list of top dentists will be available shortly. <br>
+            <p>Our list of top dentists is under contruction.<br>
             Please check back soon!</p>
         </div>
-        <!-- {dentists.dentists.map((dentist, index) => (
+        {dentists.dentists.map((dentist, index) => (
             index < 5 && <DentistCard dentist={dentist} number={index + 1} />
-        ))} -->
+        ))}
     </section>
 </BaseLayout>
 
