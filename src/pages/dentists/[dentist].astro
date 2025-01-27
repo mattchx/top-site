@@ -21,8 +21,8 @@ const { dentist } = Astro.props;
     <div class="dentist-header">
       <div class="dentist-avatar">
         <img
-          src="https://placehold.co/200?text=Dentist+Photo"
-          alt="Dentist Photo"
+          src={dentist.profileImage}
+          alt={`${dentist.name} Photo`}
           class="avatar-image"
         />
       </div>
