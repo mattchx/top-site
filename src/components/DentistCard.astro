@@ -25,8 +25,10 @@ if (number <= 3) {
             ))}
         </div>
         <p class="italic"><span class="bold">Specialties:</span> {dentist.specialties.join(', ')}</p>
-        <p><span class="bold">{dentist.office}</span> {dentist.address}</p>
-        
+        <div class="office-info">
+            <p class="bold">{dentist.office}</p> 
+            <p >{dentist.address}</p>
+        </div>
     </div>
     <div class="right-container">
         <div class="dentist-avatar">
@@ -49,12 +51,12 @@ if (number <= 3) {
     background-color: rgb(254, 254, 255);
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     text-decoration: none;
     color: inherit;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     position: relative;
-    padding-top: 2rem;
+    padding: 2rem 1.5rem 1.25rem 1.5rem;
 }
 
 .dentist-card:hover {
@@ -67,14 +69,19 @@ if (number <= 3) {
 .card-content {
     display: flex;
     flex-direction: column;
+    flex: 1;
+    gap: 0.75rem;
 }
 
 .right-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-left: 1rem;
-    /* border-left: 1px solid rgba(209, 213, 219, 0.3); */
+    justify-content: space-around;
+    min-height: 200px;
+    padding-left: 2rem;
+    margin-left: 1rem;
+    border-left: 1px solid rgba(209, 213, 219, 0.3);
 }
 
 .learn-more-btn {
@@ -147,8 +154,8 @@ if (number <= 3) {
     display: inline-flex;
     align-items: center;
     gap: 0.2rem;
-    margin: 0.75rem 0;
-    padding: 0.4rem 0.4rem;
+    margin: 0.25rem 0;
+    padding: 0.25rem 0.4rem;
     background-color: rgba(0, 123, 255, 0.05);
     border-radius: 0.5rem;
     width: max-content;
@@ -183,7 +190,6 @@ if (number <= 3) {
     height: 100px;
     border-radius: 50%;
     overflow: hidden;
-    margin-bottom: 1rem;
     border: 3px solid #007bff;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
@@ -193,26 +199,57 @@ if (number <= 3) {
     height: 100%;
     object-fit: cover;
 }
-  /* Mobile styles */
-  @media (max-width: 500px) {
+
+.office-info {
+    background-color: rgba(0, 123, 255, 0.03);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(0, 123, 255, 0.1);
+}
+
+.office-info p {
+    margin: 0;
+}
+
+.office-info p:first-child {
+    color: #0077b6;
+    margin-bottom: 0.25rem;
+}
+
+.office-info p:nth-child(2) {
+    font-size: 0.9rem;
+    color: #4b5563;
+}
+
+/* Mobile styles */
+@media (max-width: 500px) {
     .dentist-card {
         flex-direction: column-reverse;
+        padding: 1.5rem 1.25rem 1.25rem 1.25rem;
     }
 
     .right-container {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+        min-height: unset;
+        padding-left: 0;
+        margin-left: 0;
+        border-left: none;
+        border-bottom: 1px solid rgba(209, 213, 219, 0.3);
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .card-content {
+        gap: 1rem;
     }
 
     .learn-more-btn {
-        margin-bottom: 16px;
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
-    }
-
-    /* outline button */
-    .learn-more-btn {
+        margin: 0;
+        padding: 0.75rem 1.25rem;
         background-color: transparent;
         color: #007bff;
         border: 2px solid #007bff;
@@ -224,6 +261,6 @@ if (number <= 3) {
         color: white;
         border-color: #0056b3;
     }
-  }
+}
 
 </style>
