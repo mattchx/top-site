@@ -5,11 +5,14 @@
       "email": "info@westfivedental.ca",
       "address": "1295 Riverbend Rd #260, London, ON N6K 0G2",
       "phone": "(519) 555-6789",
-      "specialties": ["General Dentistry", "Family Dentistry"],
+      "specialties": [
+        "General Dentistry",
+        "Family Dentistry"
+      ],
       "office": "West Five Family Dental",
       "officeName": "West Five Family Dental",
       "bio": "Dr. Hesham Sherghin received his Doctor of Dental Surgery from the University of Detroit Mercy and completed his Advanced Education in General Dentistry (AEGD) program. He is an active member of several study clubs and provides a comfortable, family-friendly environment for patients of all ages. The clinic focuses on advanced dentistry with a personal touch, ensuring optimal oral health and beautiful smiles.",
-      "profileImage": "https://westfivedental.ca/wp-content/uploads/2024/12/H-Sherghin-SQ.png",   
+      "profileImage": "https://westfivedental.ca/wp-content/uploads/2024/12/H-Sherghin-SQ.png",
       "officeImage": "https://westfivedental.ca/wp-content/uploads/2024/03/Edited-20-768x512.jpg",
       "website": "https://westfivedental.ca",
       "education": [
@@ -18,12 +21,22 @@
         "Member of Multiple Dental Study Clubs"
       ],
       "officeHours": [
-        { "day": "Monday - Friday", "hours": "8:00 AM - 5:00 PM" },
-        { "day": "Saturday", "hours": "9:00 AM - 2:00 PM" },
-        { "day": "Sunday", "hours": "Closed" }
+        {
+          "day": "Monday - Friday",
+          "hours": "8:00 AM - 5:00 PM"
+        },
+        {
+          "day": "Saturday",
+          "hours": "9:00 AM - 2:00 PM"
+        },
+        {
+          "day": "Sunday",
+          "hours": "Closed"
+        }
       ],
       "testimonials": [
-        "We were excited to be one of West Five's first tenants in the stunning, energy-efficient office building... The process from start to finish has been as flawless as we could have hoped for! :cite[7]"
+        "Friendly staff, great place for kids to feel comfortable and excited about going to the dentist. - Nikki N.",
+        "Amazing very nice dentists that treat you well and good customer service. - Sean K."
       ]
     },
     {
@@ -31,12 +44,15 @@
       "email": "info@smilesonsouthdale.com",
       "address": "639 Southdale Road East, London, ON N6E 3M2",
       "phone": "(519) 555-9876",
-      "specialties": ["General Dentistry", "Cosmetic Dentistry"],
+      "specialties": [
+        "General Dentistry",
+        "Cosmetic Dentistry"
+      ],
       "office": "Smiles on Southdale",
       "officeName": "Smiles on Southdale Dental Clinic",
       "bio": "Dr. Aura Hidalgo and her team at Smiles on Southdale provide a friendly environment for patients of all ages. They offer a wide range of services, including digital radiography, cleanings, aligners, and emergency appointments. The clinic is known for its convenient hours and welcoming atmosphere.",
-      "profileImage": "https://example.com/dr-hidalgo.jpg",
-      "officeImage": "https://example.com/smilesonsouthdale-office.jpg",
+      "profileImage": "https://images.opencare.com/doctor-primary_3ec76305-3636-4539-b08f-addd8fe68dd2-200x200.jpeg",
+      "officeImage": "https://lh5.googleusercontent.com/p/AF1QipNeU2XyISURAMTlbK6JUotzv0jgSGzW0Wdc9he7=s542-k-no",
       "website": "https://www.smilesonsouthdale.com",
       "education": [
         "Doctor of Dental Surgery (DDS)",
@@ -44,23 +60,36 @@
         "Member of Ontario Dental Association"
       ],
       "officeHours": [
-        { "day": "Monday - Friday", "hours": "8:00 AM - 5:00 PM" },
-        { "day": "Saturday", "hours": "9:00 AM - 2:00 PM" },
-        { "day": "Sunday", "hours": "Closed" }
+        {
+          "day": "Monday - Friday",
+          "hours": "8:00 AM - 5:00 PM"
+        },
+        {
+          "day": "Saturday",
+          "hours": "9:00 AM - 2:00 PM"
+        },
+        {
+          "day": "Sunday",
+          "hours": "Closed"
+        }
       ],
       "testimonials": []
     },
     {
       "name": "Dr. Jeff Edwards",
-      "email": "info@byronwooddental.com",   
+      "email": "info@byronwooddental.com",
       "address": "431 Boler Road, Unit 8, London, ON N6K 2K8",
       "phone": "(519) 471-5110",
-      "specialties": ["General Dentistry", "Cosmetic Dentistry", "Sedation Dentistry"],
+      "specialties": [
+        "General Dentistry",
+        "Cosmetic Dentistry",
+        "Sedation Dentistry"
+      ],
       "office": "Byronwood Dental",
       "officeName": "Byronwood Dental Office",
       "bio": "Dr. Jeff Edwards and his team at Byronwood Dental have been serving the London community since the 1950s. They offer a wide range of services, including root canal therapy, dental implants, and teeth whitening. The clinic is known for its patient-centered approach and commitment to providing the highest standard of care.",
-      "profileImage": "https://example.com/dr-edwards.jpg",   
-      "officeImage": "https://example.com/byronwood-office.jpg",
+      "profileImage": "https://static.wixstatic.com/media/22f292_2e60cbaa8e7d4e34a08eeee7bd6bc6da~mv2.jpg",
+      "officeImage": null,
       "website": "https://byronwooddental.com",
       "education": [
         "Doctor of Dental Surgery (DDS)",
@@ -68,27 +97,40 @@
         "Certificate in Implant Dentistry"
       ],
       "officeHours": [
-        { "day": "Monday - Thursday", "hours": "8:00 AM - 6:00 PM" },
-        { "day": "Friday", "hours": "8:00 AM - 4:00 PM" },
-        { "day": "Saturday - Sunday", "hours": "Closed" }
+        {
+          "day": "Monday - Thursday",
+          "hours": "8:00 AM - 6:00 PM"
+        },
+        {
+          "day": "Friday",
+          "hours": "8:00 AM - 4:00 PM"
+        },
+        {
+          "day": "Saturday - Sunday",
+          "hours": "Closed"
+        }
       ],
       "testimonials": [
-        "Dr. Edwards is an excellent, caring dentist and last Friday he proved his dedication! - Lisa B :cite[1]",
-        "Always a positive experience, thorough professional care delivered with a side of humour makes it a fun place to visit. - Anita Z :cite[1]",
-        "I always enjoy my experience; I feel that they have my best interests at heart. - Rob S :cite[1]"
+        "Dr. Edwards is an excellent, caring dentist and last Friday he proved his dedication! - Lisa B",
+        "Always a positive experience, thorough professional care delivered with a side of humour makes it a fun place to visit. - Anita Z",
+        "I always enjoy my experience; I feel that they have my best interests at heart. - Rob S"
       ]
     },
     {
       "name": "Dr. Lucy",
-      "email": "info@northview-dental.com",   
-      "address": "Adelaide Street, London, ON",   
-      "phone": "(519) 555-4321",   
-      "specialties": ["General Dentistry", "Cosmetic Dentistry", "Dental Implants"],
+      "email": "info@northview-dental.com",
+      "address": "Adelaide Street, London, ON",
+      "phone": "(519) 555-4321",
+      "specialties": [
+        "General Dentistry",
+        "Cosmetic Dentistry",
+        "Dental Implants"
+      ],
       "office": "NorthView Dental",
       "officeName": "NorthView Dental Clinic",
       "bio": "Dr. Lucy and her team at NorthView Dental are committed to providing personalized, gentle, and first-class dental care. They utilize the latest technologies to ensure patients achieve and maintain optimal oral health. The clinic is known for its relaxing environment and multilingual staff.",
-      "profileImage": "https://example.com/dr-lucy.jpg",   
-      "officeImage": "https://example.com/northview-office.jpg",
+      "profileImage": "/src/assets/images/dr-lucy-dias-2.png",
+      "officeImage": "https://northview-dental.com/wp-content/uploads/2021/09/building-2021-1536x1152.jpg",
       "website": "https://northview-dental.com",
       "education": [
         "Doctor of Dental Medicine (DMD)",
@@ -96,74 +138,39 @@
         "Certification in Advanced Cosmetic Procedures"
       ],
       "officeHours": [
-        { "day": "Monday - Wednesday", "hours": "9:00 AM - 6:00 PM" },
-        { "day": "Thursday - Friday", "hours": "8:00 AM - 4:00 PM" },
-        { "day": "Saturday - Sunday", "hours": "Closed" }
+        {
+          "day": "Monday - Wednesday",
+          "hours": "9:00 AM - 6:00 PM"
+        },
+        {
+          "day": "Thursday - Friday",
+          "hours": "8:00 AM - 4:00 PM"
+        },
+        {
+          "day": "Saturday - Sunday",
+          "hours": "Closed"
+        }
       ],
       "testimonials": [
-        "North View Dental is a great office and I would recommend it to everyone!!! - Anonymous :cite[2]",
-        "Northview Dental has always exceeded my expectations and have been fair with me, in every way. They are respectful, yet fun! - Carolyn :cite[2]"
+        "North View Dental is a great office and I would recommend it to everyone!!! - Anonymous",
+        "Northview Dental has always exceeded my expectations and have been fair with me, in every way. They are respectful, yet fun! - Carolyn"
       ]
     },
     {
-      "name": "Dr. Reavell",
-      "email": "info@queensfamilydentistry.ca",   
-      "address": "Downtown London, ON",   
-      "phone": "(519) 555-1111",   
-      "specialties": ["General Dentistry", "Pediatric Dentistry", "Cosmetic Dentistry"],
-      "office": "Queens Family Dentistry",
-      "officeName": "Queens Family Dental Clinic",
-      "bio": "Dr. Reavell and his team at Queens Family Dentistry have been serving the London community for over 35 years. They offer high-quality care using the latest dental technologies. The clinic is known for its efficient team and commitment to patient satisfaction.",
-      "profileImage": "https://example.com/dr-reavell.jpg",   
-      "officeImage": "https://example.com/queensfamily-office.jpg",
-      "website": "https://queensfamilydentistry.ca",
-      "education": [
-        "Doctor of Dental Surgery (DDS)",
-        "Pediatric Dentistry Certification",
-        "Member of Canadian Dental Association"
-      ],
-      "officeHours": [
-        { "day": "Monday - Friday", "hours": "8:00 AM - 5:00 PM" },
-        { "day": "Saturday", "hours": "9:00 AM - 2:00 PM" },
-        { "day": "Sunday", "hours": "Closed" }
-      ],
-      "testimonials": []
-    },
-    {
-      "name": "Dr. Ken Wright",
-      "email": "info@wrightclinic.ca",   
-      "address": "The Wright Clinic, London, ON",   
-      "phone": "(519) 555-2222",   
-      "specialties": ["Community Dentistry", "General Dentistry"],
-      "office": "The Wright Clinic",
-      "officeName": "The Wright Community Dental Clinic",
-      "bio": "Dr. Ken Wright is the founder of The Wright Clinic, a not-for-profit dental clinic providing accessible and affordable dental care to Londoners facing barriers due to income or housing insecurity. The clinic offers routine dental services, including cleanings, fillings, and extractions.",
-      "profileImage": "https://example.com/dr-wright.jpg",   
-      "officeImage": "https://example.com/wrightclinic-office.jpg",
-      "website": "https://wrightclinic.ca",
-      "education": [
-        "Doctor of Dental Surgery (DDS)",
-        "Public Health Dentistry Certification",
-        "Fellowship in Community Dental Care"
-      ],
-      "officeHours": [
-        { "day": "Monday - Friday", "hours": "9:00 AM - 5:00 PM" },
-        { "day": "Saturday", "hours": "10:00 AM - 2:00 PM" },
-        { "day": "Sunday", "hours": "Closed" }
-      ],
-      "testimonials": []
-    },
-    {
       "name": "Dr. Sbenati",
-      "email": "info@sbenatidentistry.com",   
-      "address": "Sbenati Dentistry, London, ON",   
-      "phone": "(519) 555-3333",   
-      "specialties": ["Cosmetic Dentistry", "General Dentistry", "Pediatric Dentistry"],
+      "email": "info@sbenatidentistry.com",
+      "address": "Sbenati Dentistry, London, ON",
+      "phone": "(519) 555-3333",
+      "specialties": [
+        "Cosmetic Dentistry",
+        "General Dentistry",
+        "Pediatric Dentistry"
+      ],
       "office": "Sbenati Dentistry",
       "officeName": "Sbenati Dental Clinic",
       "bio": "Dr. Sbenati and his team offer a wide range of dental services, including cavity treatment, teeth cleaning, and dental exams. The clinic is known for its modern amenities, including free Wi-Fi and insurance acceptance.",
-      "profileImage": "https://example.com/dr-sbenati.jpg",   
-      "officeImage": "https://example.com/sbenati-office.jpg",
+      "profileImage": "https://sbenatidentistry.ca/wp-content/uploads/2024/08/dr-Sbenati.webp",
+      "officeImage": "https://lh5.googleusercontent.com/p/AF1QipO2jEeVYpM60dvIhCTtRpdCQh8752nTbm5DHT04=s406-k-no",
       "website": "https://sbenatidentistry.com",
       "education": [
         "Doctor of Dental Surgery (DDS)",
@@ -171,34 +178,67 @@
         "Pediatric Dental Care Specialist"
       ],
       "officeHours": [
-        { "day": "Monday - Thursday", "hours": "8:00 AM - 7:00 PM" },
-        { "day": "Friday", "hours": "8:00 AM - 3:00 PM" },
-        { "day": "Saturday - Sunday", "hours": "Closed" }
+        {
+          "day": "Monday - Thursday",
+          "hours": "8:00 AM - 7:00 PM"
+        },
+        {
+          "day": "Friday",
+          "hours": "8:00 AM - 3:00 PM"
+        },
+        {
+          "day": "Saturday - Sunday",
+          "hours": "Closed"
+        }
       ],
-      "testimonials": []
+      "testimonials": [
+        "I can’t say enough great things about this dental office! Dr. Sbenati is truly a dental magician. From the moment I walked in, I felt at ease, and the whole team was welcoming and professional. - Stacey D."
+      ]
     },
     {
-      "name": "Dr. Meagan",
-      "email": "info@renaissancedentalcentre.com",   
-      "address": "Renaissance Dental Centre, London, ON",   
-      "phone": "(519) 555-4444",   
-      "specialties": ["Implant Dentistry", "Cosmetic Dentistry", "Sedation Dentistry"],
-      "office": "Renaissance Dental Centre",
-      "officeName": "Renaissance Dental Clinic",
-      "bio": "Dr. Meagan and her team at Renaissance Dental Centre offer a comprehensive range of dental services, including dental implants, Invisalign, and teeth whitening. The clinic is known for its state-of-the-art technology and patient-centered care.",
-      "profileImage": "https://example.com/dr-meagan.jpg",   
-      "officeImage": "https://example.com/renaissance-office.jpg",
-      "website": "https://renaissancedentalcentre.com",
+      "name": "Dr Puneet Bhatnagar",
+      "email": "info@northlondondental.com",
+      "address": "4-665 Fanshawe Park Road West, London, ON N6G5B4",
+      "phone": "519-472-6600",
+      "specialties": [
+        "General Dentistry",
+        "Cosmetic Dentistry"
+      ],
+      "office": "North London Dental",
+      "officeName": "North London Dental",
+      "bio": "Dr. Puneet Bhatnagar is a graduate of the Schulich School of Medicine & Dentistry at the University of Western Ontario.​ He enjoys all aspects of clinical dentistry & has a special interest in surgical procedures. He has completed the NobelFellow Implant training & a MiniResidency in Implant Prosthetics with Nobel Biocare. He believes in the kind of dentistry that keeps the patient's well being at the center point of the treatment plan. Dr. Bhatnagar is also an MBA graduate and has completed an executive program at the renowned Rotman School of Management at the University of Toronto. This experience has helped him in understanding the challenges of improving healthcare access and delivery.",
+      "profileImage": "/src/assets/images/dr-puneet-bhatnagar.jpg",
+      "officeImage": "https://lh3.googleusercontent.com/p/AF1QipPfV7oShKAQxlOb2PGj_-eZYh2_qU4cU629Fx4i=s680-w680-h510",
+      "website": "https://www.northlondondental.com",
       "education": [
-        "Doctor of Dental Medicine (DMD)",
-        "Master's in Implant Dentistry",
-        "Invisalign Certified Provider"
+        "Doctor of Dental Medicine (DDS)",
+        "Rotman MBA Exec Program"
       ],
       "officeHours": [
-        { "day": "Monday - Wednesday", "hours": "8:00 AM - 6:00 PM" },
-        { "day": "Thursday", "hours": "8:00 AM - 7:00 PM" },
-        { "day": "Friday", "hours": "8:00 AM - 2:00 PM" },
-        { "day": "Saturday - Sunday", "hours": "Closed" }
+        {
+          "day": "Monday",
+          "hours": "8:00 AM - 7:00 PM"
+        },
+        {
+          "day": "Tuesday",
+          "hours": "8:00 AM - 5:00 PM"
+        },
+        {
+          "day": "Wednesday",
+          "hours": "8:00 AM - 7:00 PM"
+        },
+        {
+          "day": "Thursday",
+          "hours": "8:00 AM - 5:00 PM"
+        },
+        {
+          "day": "Friday",
+          "hours": "8:00 AM - 1:00 PM"
+        },
+        {
+          "day": "Saturday - Sunday",
+          "hours": "Closed"
+        }
       ],
       "testimonials": []
     }

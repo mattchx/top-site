@@ -12,7 +12,7 @@ import dentists from '../data/dentists.json';
             Please check back soon!</p>
         </div>
         {dentists.dentists.map((dentist, index) => (
-            index < 5 && <DentistCard dentist={dentist} number={index + 1} />
+            <DentistCard dentist={dentist} number={index + 1} />
         ))}
     </section>
 </BaseLayout>

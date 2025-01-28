@@ -75,23 +75,23 @@ const isValidImageUrl = (url: string) => {
       </div>
 
       <div class="form-column">
-        <div class="testimonials">
-          <h2>What Patients Say</h2>
-          <div class="testimonial">
-            <p class="italic">
-              "Dr. {dentist.name.split(" ")[0]} is amazing! They made me feel completely
-              at ease during my procedure."
-            </p>
-            <span class="bold">- Sarah T.</span>
+        {dentist.testimonials.length > 0 && (
+          <div class="testimonials">
+            <h2>What Patients Say</h2>
+            {dentist.testimonials.map((testimonial) => (
+              <div class="testimonial">
+                {(() => {
+                  const [text, name] = testimonial.split(" - ");
+                  return (
+                    <p class="italic">
+                      {text} - <strong>{name}</strong>
+                    </p>
+                  );
+                })()}
+              </div>
+            ))}
           </div>
-          <div class="testimonial">
-            <p class="italic">
-              "The office is beautiful and the staff is so friendly. I highly
-              recommend Dr. {dentist.name.split(" ")[0]}!"
-            </p>
-            <span class="bold">- Michael R.</span>
-          </div>
-        </div>
+        )}
         <div class="contact-form">
           <LeadForm dentist={dentist} />
         </div>
