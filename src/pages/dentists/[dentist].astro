@@ -12,11 +12,6 @@ export async function getStaticPaths() {
 
 const { dentist } = Astro.props;
 
-// Helper function to validate image URL
-const isValidImageUrl = (url: string | null) => {
-    if (!url) return false;
-    return !url.includes('example.com');
-}
 ---
 
 <BaseLayout>
@@ -25,7 +20,7 @@ const isValidImageUrl = (url: string | null) => {
       <a href="/" class="back-button">&larr; Back to All Dentists</a>
     </div>
     <div class="dentist-header">
-      {isValidImageUrl(dentist.profileImage) && (
+      {dentist.profileImage && (
         <div class="dentist-avatar">
           <img
             src={dentist.profileImage}
@@ -64,7 +59,7 @@ const isValidImageUrl = (url: string | null) => {
           <h2>Location</h2>
           <p>{dentist.address}</p>
         </div>
-        {isValidImageUrl(dentist.officeImage) && (
+        {dentist.officeImage && (
           <div class="dentist-office-image">
             <img
               src={dentist.officeImage}
