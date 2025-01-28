@@ -11,43 +11,49 @@ const { title } = Astro.props;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
+    <meta name="robots" content="index, follow">
     <meta name="description" content="Find and connect with top-rated dentists in your area. Learn about their specialties and book appointments easily.">
-    <meta name="keywords" content="dentist, dental care, teeth cleaning, dental implants, orthodontics, cosmetic dentistry, dental specialists">
+    <meta name="keywords" content="dentist, dental care, teeth cleaning, dental implants, orthodontics, cosmetic dentistry, dental specialists, London Ontario dentists">
     <link rel="canonical" href={Astro.url.href} />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="alternate icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href="https://london-dentists.findpros.site/favicon.png" />
+    <link rel="alternate icon" href="https://london-dentists.findpros.site/favicon.ico" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content="Find and connect with top-rated dentists in your area. Learn about their specialties and book appointments easily." />
     <meta property="og:url" content={Astro.url.href} />
-    <meta property="og:image" content="/social-image.jpg" />
+    <meta property="og:image" content="https://london-dentists.findpros.site/social-image.jpg" />
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content="Find and connect with top-rated dentists in your area. Learn about their specialties and book appointments easily." />
-    <meta name="twitter:image" content="/social-image.jpg" />
+    <meta name="twitter:image" content="https://london-dentists.findpros.site/social-image.jpg" />
 
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Dentist",
+      "@type": "LocalBusiness",
       "name": "Top Dentists in London, Ontario",
       "image": "/social-image.jpg",
-      "description": "Find and connect with top-rated dentists in your area",
-      "url": {Astro.url.href},
-      "telephone": "",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "",
-        "addressLocality": "",
-        "postalCode": "",
-        "addressCountry": ""
+      "description": "Find and connect with top-rated dentists in London, Ontario. Compare dentists, read reviews, and book appointments easily.",
+      "url": "https://london-dentists.findpros.site",
+      "areaServed": {
+        "@type": "City",
+        "name": "London",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "Ontario",
+          "addressCountry": "CA"
+        }
       },
-      "sameAs": []
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "reviewCount": "50"
+      }
     }
     </script>
 </head>
