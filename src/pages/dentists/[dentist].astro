@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 const { dentist } = Astro.props;
 
 // Helper function to validate image URL
-const isValidImageUrl = (url: string) => {
+const isValidImageUrl = (url: string | null) => {
     if (!url) return false;
     return !url.includes('example.com');
 }

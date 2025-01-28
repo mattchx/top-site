@@ -37,7 +37,8 @@
       "testimonials": [
         "Friendly staff, great place for kids to feel comfortable and excited about going to the dentist. - Nikki N.",
         "Amazing very nice dentists that treat you well and good customer service. - Sean K."
-      ]
+      ],
+      "rating": 4.8
     },
     {
       "name": "Dr. Aura Hidalgo",
@@ -73,7 +74,8 @@
           "hours": "Closed"
         }
       ],
-      "testimonials": []
+      "testimonials": [],
+      "rating": 4.7
     },
     {
       "name": "Dr. Jeff Edwards",
@@ -114,7 +116,8 @@
         "Dr. Edwards is an excellent, caring dentist and last Friday he proved his dedication! - Lisa B",
         "Always a positive experience, thorough professional care delivered with a side of humour makes it a fun place to visit. - Anita Z",
         "I always enjoy my experience; I feel that they have my best interests at heart. - Rob S"
-      ]
+      ],
+      "rating": 4.9
     },
     {
       "name": "Dr. Lucy",
@@ -154,7 +157,8 @@
       "testimonials": [
         "North View Dental is a great office and I would recommend it to everyone!!! - Anonymous",
         "Northview Dental has always exceeded my expectations and have been fair with me, in every way. They are respectful, yet fun! - Carolyn"
-      ]
+      ],
+      "rating": 4.6
     },
     {
       "name": "Dr. Sbenati",
@@ -192,8 +196,9 @@
         }
       ],
       "testimonials": [
-        "I can’t say enough great things about this dental office! Dr. Sbenati is truly a dental magician. From the moment I walked in, I felt at ease, and the whole team was welcoming and professional. - Stacey D."
-      ]
+        "I can't say enough great things about this dental office! Dr. Sbenati is truly a dental magician. From the moment I walked in, I felt at ease, and the whole team was welcoming and professional. - Stacey D."
+      ],
+      "rating": 4.8
     },
     {
       "name": "Dr Puneet Bhatnagar",
@@ -240,7 +245,8 @@
           "hours": "Closed"
         }
       ],
-      "testimonials": []
+      "testimonials": [],
+      "rating": 4.5
     }
   ]
 }

@@ -1,13 +1,6 @@
 ---
 const { dentist, number } = Astro.props;
-let rating;
-if (number <= 3) {
-    rating = 5;
-} else if (number <= 6) {
-    rating = 4.5;
-} else {
-    rating = 4;
-}
+const rating = dentist.rating;
 ---
 
 <a href={`/dentists/${dentist.name.replace(/ /g, '-').toLowerCase()}`} class="dentist-card">
