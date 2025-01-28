@@ -6,11 +6,6 @@ import dentists from '../data/dentists.json';
 
 <BaseLayout title="Top Dentists in London, Ontario">
     <section class="dentist-list">
-        <div class="coming-soon">
-            <h2>Coming Soon</h2>
-            <p>Our list of top dentists is under contruction.<br>
-            Please check back soon!</p>
-        </div>
         {dentists.dentists.map((dentist, index) => (
             <DentistCard dentist={dentist} number={index + 1} />
         ))}
