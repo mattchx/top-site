@@ -14,7 +14,7 @@ const { dentist } = Astro.props;
 
 ---
 
-<BaseLayout>
+<BaseLayout title={`${dentist.name} - Top Dentist in London, Ontario`} {dentist}>
   <div class="dentist-detail">
     <div class="button-container">
       <a href="/" class="back-button">&larr; Back to All Dentists</a>

@@ -2,7 +2,16 @@
 import '../styles/global.css';
 import '../styles/reset.css';
 
-const { title } = Astro.props;
+const { title, dentist } = Astro.props;
+
+// Construct meta description based on page type
+const metaDescription = dentist
+  ? `Book an appointment with ${dentist.name} at ${dentist.officeName} in London, Ontario. Specializing in ${dentist.specialties.join(", ")}. ${dentist.bio.slice(0, 100)}...`
+  : "Find and connect with top-rated dentists in London, Ontario. Learn about their specialties and book appointments easily.";
+
+// Site URL for SEO
+const siteUrl = "https://london-dentists.findpros.site";
+const canonicalUrl = `${siteUrl}${Astro.url.pathname}`;
 ---
 
 <!DOCTYPE html>
@@ -12,48 +21,65 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
     <meta name="robots" content="index, follow">
-    <meta name="description" content="Find and connect with top-rated dentists in your area. Learn about their specialties and book appointments easily.">
-    <meta name="keywords" content="dentist, dental care, teeth cleaning, dental implants, orthodontics, cosmetic dentistry, dental specialists, London Ontario dentists">
-    <link rel="canonical" href={Astro.url.href} />
-    <link rel="icon" type="image/png" href="https://london-dentists.findpros.site/favicon.png" />
-    <link rel="alternate icon" href="https://london-dentists.findpros.site/favicon.ico" />
+    <meta name="description" content={metaDescription}>
+    <meta name="keywords" content={dentist
+      ? `dentist, dental care, ${dentist.specialties.join(", ")}, ${dentist.name}, London Ontario dentists`
+      : "dentist, dental care, teeth cleaning, dental implants, orthodontics, cosmetic dentistry, dental specialists, London Ontario dentists"}>
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" type="image/png" href={`${siteUrl}/favicon.png`} />
+    <link rel="alternate icon" href={`${siteUrl}/favicon.ico`} />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
-    <meta property="og:description" content="Find and connect with top-rated dentists in your area. Learn about their specialties and book appointments easily." />
-    <meta property="og:url" content={Astro.url.href} />
-    <meta property="og:image" content="https://london-dentists.findpros.site/social-image.jpg" />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={`${siteUrl}/social-image.jpg`} />
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content="Find and connect with top-rated dentists in your area. Learn about their specialties and book appointments easily." />
-    <meta name="twitter:image" content="https://london-dentists.findpros.site/social-image.jpg" />
+    <meta name="twitter:description" content={metaDescription} />
+    <meta name="twitter:image" content={`${siteUrl}/social-image.jpg`} />
 
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Top Dentists in London, Ontario",
-      "image": "/social-image.jpg",
-      "description": "Find and connect with top-rated dentists in London, Ontario. Compare dentists, read reviews, and book appointments easily.",
-      "url": "https://london-dentists.findpros.site",
-      "areaServed": {
-        "@type": "City",
-        "name": "London",
+      "@type": dentist ? "Dentist" : "LocalBusiness",
+      "name": dentist ? dentist.name : "Top Dentists in London, Ontario",
+      "image": dentist?.profileImage ? `${siteUrl}${dentist.profileImage}` : `${siteUrl}/social-image.jpg`,
+      "description": metaDescription,
+      "url": canonicalUrl,
+      ...(dentist ? {
         "address": {
           "@type": "PostalAddress",
+          "streetAddress": dentist.address,
+          "addressLocality": "London",
           "addressRegion": "Ontario",
           "addressCountry": "CA"
+        },
+        "openingHours": dentist.officeHours.map(h => `${h.day} ${h.hours}`),
+        "isPartOf": {
+          "@type": "LocalBusiness",
+          "name": dentist.officeName
         }
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.7",
-        "reviewCount": "50"
-      }
+      } : {
+        "areaServed": {
+          "@type": "City",
+          "name": "London",
+          "address": {
+            "@type": "PostalAddress",
+            "addressRegion": "Ontario",
+            "addressCountry": "CA"
+          }
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.7",
+          "reviewCount": "50"
+        }
+      })
     }
     </script>
 </head>
