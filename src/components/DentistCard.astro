@@ -1,9 +1,10 @@
 ---
+import { generateDentistSlug } from '../utils/slugs';
 const { dentist, number } = Astro.props;
 const rating = dentist.rating;
 ---
 
-<a href={`/dentists/${dentist.name.replace(/ /g, '-').toLowerCase()}`} class="dentist-card">
+<a href={`/dentists/${generateDentistSlug(dentist.name)}`} class="dentist-card">
     
     <!-- <div class="card-number">#{number}</div> -->
     <div class="card-number"><div class="gold-star">★</div></div>
@@ -20,7 +21,7 @@ const rating = dentist.rating;
         <p class="italic"><span class="bold">Specialties:</span> {dentist.specialties.join(', ')}</p>
         <div class="office-info">
             <p class="bold">{dentist.office}</p> 
-            <p >{dentist.address}</p>
+            <p>{dentist.address}</p>
         </div>
     </div>
     <div class="right-container">
@@ -34,8 +35,6 @@ const rating = dentist.rating;
 </a>
 
 <style>
-
-
 .dentist-card {
     border: 1px solid rgba(209, 213, 219, 0.5);
     border-radius: 12px;
@@ -255,5 +254,4 @@ const rating = dentist.rating;
         border-color: #0056b3;
     }
 }
-
 </style>

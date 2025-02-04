@@ -1,11 +1,12 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import LeadForm from "../../components/LeadForm.astro";
+import { generateDentistSlug } from '../../utils/slugs';
 
 export async function getStaticPaths() {
   const { dentists } = await import("../../data/dentists.json");
   return dentists.map((dentist) => ({
-    params: { dentist: dentist.name.replace(/ /g, "-").toLowerCase() },
+    params: { dentist: generateDentistSlug(dentist.name) },
     props: { dentist },
   }));
 }
