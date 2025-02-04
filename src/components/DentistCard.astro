@@ -1,10 +1,9 @@
 ---
-import { generateDentistSlug } from '../utils/slugs';
-const { dentist, number } = Astro.props;
+const { dentist, number, slug } = Astro.props;
 const rating = dentist.rating;
 ---
 
-<a href={`/dentists/${generateDentistSlug(dentist.name)}`} class="dentist-card">
+<a href={`/dentists/${slug}`} class="dentist-card">
     
     <!-- <div class="card-number">#{number}</div> -->
     <div class="card-number"><div class="gold-star">★</div></div>
